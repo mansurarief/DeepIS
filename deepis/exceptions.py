@@ -10,3 +10,8 @@ class InputDimensionError(Exception):
     does not match with the neural net input dimension
     '''
     pass
+
+class InfeasibleProblemError(Exception):
+    '''Raised when the problem is infeasible. Try lower the threshold of the problem
+    '''
+    pass

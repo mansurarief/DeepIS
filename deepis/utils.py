@@ -21,11 +21,13 @@ class Timer():
         print(self.total_duration.total_seconds())
 
 
-def plot_dominating_points(X, Y, dominating_points, figsize=[5, 5], filename='Dominating_points.pdf'):
+def plot_dominating_points(X, Y, dominating_points, figsize=[5, 5], save=False, filename='Dominating_points.pdf'):
     plt.figure(figsize=figsize)
     plt.title('Dominating points')
     #plt.contourf(x1s, x2s, yhats.reshape(x1s.shape) >= 0, cmap='coolwarm', alpha=0.5)
     plt.scatter(X[:, 0], X[:, 1], c=Y, cmap='coolwarm', s=1, alpha=0.3)
     plt.scatter(dominating_points[:, 0], dominating_points[:, 1], c='k', s=10)
-    plt.savefig('figs/'+filename, format='pdf', dpi=100)
-    plt.close()
+    if save: 
+        plt.savefig(filename, format='pdf', dpi=100)
+        
+    plt.show()
